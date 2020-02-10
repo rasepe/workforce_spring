@@ -35,6 +35,7 @@ class EmployeeController {
 	@CrossOrigin(origins = "http://localhost")
 	@PostMapping("/employees")
 	Employee newEmployee(@RequestBody Employee newEmployee) {   //(@RequestBody Employee newEmployee) 
+		newEmployee.setSalary(newEmployee.getRole().salary());
 		return repository.save(newEmployee);
 	}
 
@@ -72,38 +73,24 @@ class EmployeeController {
 				
 	}
 	
-	// Employees by role
-//	@CrossOrigin(origins = "http://localhost")
-//	@GetMapping("/employees/{role}")
-//	Employee role(@PathVariable String role) {
-//		List<Employee> employeeList = repository.findAll();
-//		for (long i=0; i<repository.count(); i++) {
-//			if (employeeList.get((int)i).getRole().name() == role) {
-//				final long id=i;
-//				return repository.findById(id)
-//						.orElseThrow(() -> new EmployeeNotFoundException(id));
-//			}
-//		}
-//		return null;
-//		
-//	}
-	
+
 	
 	@CrossOrigin(origins = "http://localhost")
-	@PutMapping("/employees/{id}")
-	Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
-		
-		return repository.findById(id)
-			.map(employee -> {
-				employee.setName(newEmployee.getName());
-				employee.setRole(newEmployee.getRole());
-				return repository.save(employee);
-			})
-			.orElseGet(() -> {
-				newEmployee.setId(id);
-				return repository.save(newEmployee);
-			});
-	}
+	  @PutMapping("/employees/{id}")
+	  Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
+
+	    return repository.findById(id)
+	      .map(employee -> {
+	        employee.setName(newEmployee.getName());
+	        employee.setRole(newEmployee.getRole());
+	        employee.setSalary(employee.getRole().salary());
+	        return repository.save(employee);
+	      })
+	      .orElseGet(() -> {
+	        newEmployee.setId(id);
+	        return repository.save(newEmployee);
+	      });
+	  }
 
 	@CrossOrigin(origins = "http://localhost")
 	@DeleteMapping("/employees/{id}")

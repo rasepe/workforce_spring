@@ -10,13 +10,11 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 class LoadDatabase {
 
-//	private Object log;
-
-	@Bean
-	CommandLineRunner initDatabase(EmployeeRepository repository) {
-		return args -> {
-			log.info("Preloading " + repository.save(new Employee("Bilbo Baggins", "assistant")));
-			log.info("Preloading " + repository.save(new Employee("Frodo Baggins", "manager")));
-		};
-	}
+//	@Bean
+//	CommandLineRunner initDatabase(EmployeeRepository repository) {
+//		return args -> {
+//			log.info("Preloading " + repository.save(new Employee("Bilbo Baggins", "assistant")));
+//			log.info("Preloading " + repository.save(new Employee("Frodo Baggins", "manager")));
+//		};
+//	}
 }

@@ -19,7 +19,7 @@ class Employee {
 
 	Employee(String name, String role) {
 		this.name = name;
-		//this.role = role;
+
 		switch (role) {
 		case "assistant":
 			this.role= Role.ASSISTANT;
@@ -34,5 +34,6 @@ class Employee {
 		this.salary = this.role.salary();
 	}
 
+	
 
 }
