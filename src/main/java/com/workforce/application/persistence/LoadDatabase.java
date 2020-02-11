@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.persistence;
 
 import lombok.extern.slf4j.Slf4j;
 

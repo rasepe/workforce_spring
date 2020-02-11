@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.domain;
 
 import lombok.Data;
 
@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+public
 class Employee {
 
 	private @Id @GeneratedValue Long id;
@@ -17,10 +18,10 @@ class Employee {
 	
 	Employee() {}
 
-	Employee(String name, String role) {
+	Employee(String name, Role role) {
 		this.name = name;
 
-		switch (role) {
+		switch (role.toString()) {
 		case "assistant":
 			this.role= Role.ASSISTANT;
 			break;
@@ -31,6 +32,7 @@ class Employee {
 			this.role= Role.BOSS;
 			break;
 		}
+		
 		this.salary = this.role.salary();
 	}
 

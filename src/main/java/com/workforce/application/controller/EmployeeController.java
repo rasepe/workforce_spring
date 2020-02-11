@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.controller;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.workforce.application.domain.Employee;
+import com.workforce.application.persistence.EmployeeRepository;
 
 @RestController
 class EmployeeController {

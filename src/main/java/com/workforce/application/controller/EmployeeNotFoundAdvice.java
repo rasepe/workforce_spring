@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

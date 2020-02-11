@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.domain;
 
 public enum Role {
 	ASSISTANT (1000),
@@ -11,7 +11,7 @@ public enum Role {
 		this.salary = salary;
 	}
 
-	double salary() { return salary; }
+	public double salary() { return salary; }
 	
 	
 }

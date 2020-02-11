@@ -1,4 +1,4 @@
-package com.workforce.application;
+package com.workforce.application.controller;
 
 class EmployeeNotFoundException extends RuntimeException {
 
