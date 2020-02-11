@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/workforce.js"></script>
+</head>
+<body onload="loadIds('employeeId')">
+	<form id="updateEmployee">
+		<label for="employeeId">Choose one id to update employee</label> <br>
+		<select id="employeeId">
+		</select> 
+		<br> 
+		<label for="editName">Enter new name:</label> 
+		<input type="text" id="editName"> 
+		<br> 
+		<label for="editRole">Choose new role:</label> 
+		<select id="editRole">
+			<option value="ASSISTANT">Assistant</option>
+			<option value="MANAGER">Manager</option>
+			<option value="BOSS">Boss</option>
+		</select> 
+		<input class="btn btn-primary" id="submit-button" type="submit" value="Save changes" onclick="update()">
+	</form>
+	<p>
+		<a href="http://localhost/workforce/">BACK TO INDEX</a>
+	</p>
+</body>
+</html>

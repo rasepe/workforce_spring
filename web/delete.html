@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/workforce.js"></script>
+</head>
+<body onload="loadIds('deletedEmployeeId')">
+	<form id="deleteEmployee">
+		<label for="deletedEmployeeId">Choose one id to delete
+			employee</label> <br> <select id="deletedEmployeeId">
+		</select> <br> <input class="btn btn-primary" id="submit-button"
+			type="submit" value="Delete employee" onclick="deleteEmployee()">
+	</form>
+	<p>
+		<a href="http://localhost/workforce/">BACK TO INDEX</a>
+	</p>
+</body>
+</html>
