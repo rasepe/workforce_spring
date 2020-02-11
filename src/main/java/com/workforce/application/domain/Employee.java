@@ -21,14 +21,14 @@ class Employee {
 	Employee(String name, Role role) {
 		this.name = name;
 
-		switch (role.toString()) {
-		case "assistant":
+		switch (role) { //switch (role.toString()) {
+		case ASSISTANT:  //case "assistant":
 			this.role= Role.ASSISTANT;
 			break;
-		case "manager":
+		case MANAGER:    //case "manager":
 			this.role= Role.MANAGER;
 			break;
-		case "boss":
+		case BOSS:    //case "boss":
 			this.role= Role.BOSS;
 			break;
 		}
